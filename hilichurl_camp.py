@@ -1,6 +1,6 @@
 # Autoplay Genshin's "Hilichurl Camp" web game.
 
-import discord_webhook
+import dwebhook
 import get_session
 import sys
 import time
