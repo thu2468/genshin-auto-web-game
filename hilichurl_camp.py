@@ -90,22 +90,24 @@ def milestone_rewards():
             SESSION.post(MILESTONE_REWARD, json = {'milestone_gear': ms['milestone_gear']})
 
 if __name__ == '__main__':
-    with SESSION.get(DATA) as r:
-        data = r.json()
-    if data['retcode'] == -104 or ('data' in data and data['data']['is_end']):
-        print('Event is over.')
-        exit(-104)
-    # do daily tasks:
-    print('#'*50)
-    complete_tasks()
-    print('#'*50)
-    while 1:
-        # craft furniture until out of mats
-        make_id, seconds = craft_something()
-        if make_id == None:
-            break
-        time.sleep(seconds+5)
-        SESSION.post(FINISH_CRAFT, json = {'make_id': make_id})
-    # claim milestone rewards
-    milestone_rewards()
-    sys.stdout.publish()
+    try:
+        with SESSION.get(DATA) as r:
+            data = r.json()
+        if data['retcode'] == -104 or ('data' in data and data['data']['is_end']):
+            print('Event is over.')
+            exit(-104)
+        # do daily tasks:
+        print('#'*50)
+        complete_tasks()
+        print('#'*50)
+        while 1:
+            # craft furniture until out of mats
+            make_id, seconds = craft_something()
+            if make_id == None:
+                break
+            time.sleep(seconds+5)
+            SESSION.post(FINISH_CRAFT, json = {'make_id': make_id})
+        # claim milestone rewards
+        milestone_rewards()
+    finally:
+        sys.stdout.publish()

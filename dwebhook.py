@@ -11,11 +11,10 @@ class Logger(object):
 
     def write(self, message):
         self.stdout.write(message)
-        self.log.write(message+'\n')
+        self.log.write(message)
         
     def flush(self):
         self.stdout.flush()
-        self.publish()
     
     def publish(self):
         if 'DISCORD_WEBHOOK' in os.environ:
