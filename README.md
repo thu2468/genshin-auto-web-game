@@ -1,5 +1,7 @@
 # genshin-auto-web-game
 Play the current Genshin Impact web game automatically using workflow actions, currently only works on global (EN) server. __Use at your own risk.__
+
+Current Game: `Hilidream Camp`
 ## Setup
 1. Fork this repo and perform the following on your local fork.
 2. Navigate to [https://genshin.mihoyo.com/en/home](https://genshin.mihoyo.com/en/home), open the javascript console `ctrl+shift+j` and run the following code: `copy(document.cookie)`

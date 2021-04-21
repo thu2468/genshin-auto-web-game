@@ -1,4 +1,4 @@
-# Autoplay Genshin's "Hilichurl Camp" web game.
+# Autoplay Genshin's "Hilidream Camp" web game.
 
 import dwebhook
 from get_session import SESSION
