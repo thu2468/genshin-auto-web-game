@@ -53,7 +53,8 @@ def craft_something():
             if mat in mat_list:
                 formula += mat
         mats_sorted = sorted(mat_list.keys())
-        for mat in mats_sorted[mats_sorted.index(formula[-1]):]:
+        # triple combinations (ex: AAA) are always invalid, so we can exclude those.
+        for mat in mats_sorted[max(mats_sorted.index(formula[0])+1, mats_sorted.index(formula[-1])):]:
             # try appending different materials to formula
             full_formula = formula + mat
             if ''.join(sorted(full_formula)) not in used_recipes:
