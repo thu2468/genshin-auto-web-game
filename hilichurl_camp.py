@@ -68,7 +68,7 @@ def craft_something():
             continue
         break
     if full_formula:
-        print('Crafting items using formula:',full_formula)
+        print('Crafting item using formula:',full_formula)
         with SESSION.post(CRAFT_ITEM, json = {'formula_item_list': list(full_formula)}) as r:
             res = r.json()
         if res['retcode'] == 0 and res['message'] == 'OK':
@@ -76,10 +76,9 @@ def craft_something():
             return res['data']['make_id'],res['data']['left_time']
         else:
             print(res['message'])
-            return None,None
     else:
         print('No recipes possible (out of materials)')
-        return None,None
+    return None,None
 
 def milestone_rewards():
     with SESSION.get(DATA) as r:
@@ -97,9 +96,9 @@ if __name__ == '__main__':
             print('Event is over.')
             exit(-104)
         # do daily tasks:
-        print('#'*50)
+        print('#'*30)
         complete_tasks()
-        print('#'*50)
+        print('#'*30)
         while 1:
             # craft furniture until out of mats
             make_id, seconds = craft_something()
