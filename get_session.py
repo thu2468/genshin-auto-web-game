@@ -1,7 +1,7 @@
 import requests
 import os
 
-if 'COOKIE' not in os.environ:
+if not os.environ.get('COOKIE'):
     print('Cookie not set, exiting...')
     exit(1)
 

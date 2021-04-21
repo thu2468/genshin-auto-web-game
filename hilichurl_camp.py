@@ -7,7 +7,7 @@ import time
 import os
 
 uid = ''
-if 'UID' in os.environ:
+if os.environ.get('UID'):
     uid = f"&uid={os.environ['UID']}"
 #GET
 RECIPE_LIST = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/user/furniture?lang=en-us{uid}&region=os_usa&is_app=0'

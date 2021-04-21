@@ -17,7 +17,7 @@ class Logger(object):
         self.stdout.flush()
     
     def publish(self):
-        if 'DISCORD_WEBHOOK' in os.environ:
+        if os.environ.get('DISCORD_WEBHOOK'):
             webhook = DiscordWebhook(url = os.environ['DISCORD_WEBHOOK'])
             embed = DiscordEmbed(title='Web Game Results', description=self.log.getvalue().strip('\n'), color='03b2f8')
             webhook.add_embed(embed)
