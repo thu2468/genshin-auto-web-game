@@ -10,16 +10,16 @@ uid = ''
 if os.environ.get('UID'):
     uid = f"&uid={os.environ['UID']}"
 #GET
-RECIPE_LIST = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/user/furniture?lang=en-us{uid}&region=os_usa&is_app=0'
-TASK_LIST = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/task/list?lang=en-us{uid}&region=os_usa&is_app=0'
-DATA = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/event/index?lang=en-us{uid}&region=os_usa&is_app=0'
-FURN_LIST = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/user/furniture?lang=en-us{uid}&region=os_usa&is_app=0'
+RECIPE_LIST = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/user/furniture?lang=en-us{uid}&region=os_asia&is_app=0'
+TASK_LIST = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/task/list?lang=en-us{uid}&region=os_asia&is_app=0'
+DATA = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/event/index?lang=en-us{uid}&region=os_asia&is_app=0'
+FURN_LIST = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/user/furniture?lang=en-us{uid}&region=os_asia&is_app=0'
 #POST
-TASK_COMPLETE = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/task/complete?lang=en-us{uid}&region=os_usa&is_app=0'
-TASK_REWARD = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/task/reward?lang=en-us{uid}&region=os_usa&is_app=0'
-CRAFT_ITEM = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/make/start?lang=en-us{uid}&region=os_usa&is_app=0'
-FINISH_CRAFT = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/make/finish?lang=en-us{uid}&region=os_usa&is_app=0'
-MILESTONE_REWARD = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/milestone/reward?lang=en-us{uid}&region=os_usa&is_app=0'
+TASK_COMPLETE = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/task/complete?lang=en-us{uid}&region=os_asia&is_app=0'
+TASK_REWARD = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/task/reward?lang=en-us{uid}&region=os_asia&is_app=0'
+CRAFT_ITEM = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/make/start?lang=en-us{uid}&region=os_asia&is_app=0'
+FINISH_CRAFT = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/make/finish?lang=en-us{uid}&region=os_asia&is_app=0'
+MILESTONE_REWARD = f'https://hk4e-api-os.mihoyo.com/event/e20210421homeland/web/milestone/reward?lang=en-us{uid}&region=os_asia&is_app=0'
 
 def complete_tasks():
     with SESSION.get(TASK_LIST) as r:
