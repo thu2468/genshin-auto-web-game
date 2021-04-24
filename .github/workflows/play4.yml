@@ -31,7 +31,7 @@ jobs:
       - name: Play game
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          COOKIE: ${{ secrets.COOKIE3 }}
+          COOKIE: ${{ secrets.COOKIE4 }}
           UID: ${{ secrets.UID }}
         run: |
           python3 ./hilichurl_camp_na.py
