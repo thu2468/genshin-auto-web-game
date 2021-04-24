@@ -1,12 +1,12 @@
 import requests
 import os
 
-if not os.environ.get('COOKIE'):
+if not os.environ.get('COOKIE2'):
     print('Cookie not set, exiting...')
     exit(1)
 
 def get_session():
-    indiv = os.environ['COOKIE'].split(';')
+    indiv = os.environ['COOKIE2'].split(';')
     pairs = [c.split('=') for c in indiv]
     pairs = [(k.strip(),v.strip()) for (k,v) in pairs]
     s = requests.Session()
