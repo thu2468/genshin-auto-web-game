@@ -43,11 +43,3 @@ jobs:
           UID: ${{ secrets.UID }}
         run: |
           python3 ./hilichurl_camp.py
-          
-      - name: Play game 3
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          COOKIE: ${{ secrets.COOKIE3 }}
-          UID: ${{ secrets.UID }}
-        run: |
-          python3 ./hilichurl_camp.py
